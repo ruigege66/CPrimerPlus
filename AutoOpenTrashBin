@@ -1,0 +1,41 @@
+#include<Servo.h>
+
+#define DuoPIN D5
+#define Echo D2
+#define Trig D8
+
+Servo myDuoJi;
+long getTime(){
+  digitalWrite(Trig,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(Trig,LOW);
+
+  return pulseIn(Echo,HIGH);
+}
+
+void initChaoShengBo(){
+  pinMode(Echo,INPUT);
+  pinMode(Trig,OUTPUT);
+}
+
+void setup(){
+  initChaoShengBo();
+  myDuoJi.attach(DuoPIN);
+  Serial.begin(115200);
+}
+void loop(){
+  long dis;
+  dis = getTime()/58;
+  ` 1
+  if(dis<10){43RFGUYT6
+    myDuoJi.write(70);
+    delay(700);
+    myDuoJi.write(90);
+    delay(1000);
+    myDuoJi.write(100);
+    delay(1140);
+    myDuoJi.write(90);
+  }else{
+    myDuoJi.write(90);  
+  }
+}
